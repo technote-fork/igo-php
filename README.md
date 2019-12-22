@@ -1,9 +1,9 @@
 # Igo-php - PHP による形態素解析プログラム
 
-[![CI Status](https://github.com/technote-fork/igo-php/workflows/CI/badge.svg)](https://github.com/technote-fork/igo-php/actions)
-[![codecov](https://codecov.io/gh/technote-fork/igo-php/branch/master/graph/badge.svg)](https://codecov.io/gh/technote-fork/igo-php)
-[![CodeFactor](https://www.codefactor.io/repository/github/technote-fork/igo-php/badge)](https://www.codefactor.io/repository/github/technote-fork/igo-php)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/technote-fork/igo-php/blob/master/LICENSE)
+[![CI Status](https://github.com/technote-space/igo-php/workflows/CI/badge.svg)](https://github.com/technote-space/igo-php/actions)
+[![codecov](https://codecov.io/gh/technote-space/igo-php/branch/master/graph/badge.svg)](https://codecov.io/gh/technote-space/igo-php)
+[![CodeFactor](https://www.codefactor.io/repository/github/technote-space/igo-php/badge)](https://www.codefactor.io/repository/github/technote-space/igo-php)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/technote-space/igo-php/blob/master/LICENSE)
 [![PHP: >=5.6](https://img.shields.io/badge/PHP-%3E%3D5.6-orange.svg)](http://php.net/)
 
 <!-- START doctoc -->
@@ -18,7 +18,7 @@
 composer で以下のコマンドを実行します。
 
 ```shell
-$ composer technote-fork/igo-php
+$ composer technote-space/igo-php
 ```
 
 ## 3. 辞書の作成方法

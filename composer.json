@@ -1,9 +1,9 @@
 {
-  "name": "technote-fork/igo-php",
+  "name": "technote-space/igo-php",
   "type": "library",
   "license": "MIT",
   "description": "Morphological analysis engine 'Igo' porting and changed for PHP 5.6 and composer.",
-  "homepage": "https://github.com/technote-fork/igo-php",
+  "homepage": "https://github.com/technote-space/igo-php",
   "keywords": [
     "php",
     "igo",
@@ -46,7 +46,7 @@
     "setup": [
       "composer install --no-interaction --prefer-dist --no-suggest",
       "rm -rdf jdic",
-      "git clone --branch=test https://github.com/technote-fork/igo-php.git jdic"
+      "git clone --branch=test https://github.com/technote-space/igo-php.git jdic"
     ],
     "lint": [
       "@phpcs",
@@ -67,7 +67,7 @@
     ],
     "install:phpunit": [
       "@packages",
-      "git clone --branch=test https://github.com/technote-fork/igo-php.git jdic"
+      "git clone --branch=test https://github.com/technote-space/igo-php.git jdic"
     ]
   },
   "config": {
