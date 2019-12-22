@@ -44,7 +44,11 @@
     }
   },
   "scripts": {
-    "setup": "composer install --no-interaction --prefer-dist --no-suggest",
+    "setup": [
+      "composer install --no-interaction --prefer-dist --no-suggest",
+      "rm -rdf jdic",
+      "git clone --branch=test https://github.com/technote-fork/igo-php.git jdic"
+    ],
     "lint": [
       "@phpcs",
       "@phpmd"
@@ -65,7 +69,8 @@
     "install:phpunit": [
       "rm -rdf vendor",
       "rm -f composer.lock",
-      "composer require --dev phpunit/phpunit"
+      "composer require --dev phpunit/phpunit",
+      "git clone --branch=test https://github.com/technote-fork/igo-php.git jdic"
     ]
   },
   "config": {
