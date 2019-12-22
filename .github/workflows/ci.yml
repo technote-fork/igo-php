@@ -106,6 +106,7 @@ jobs:
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
           COVERAGE_FILE: ./coverage/clover.xml
+        if: matrix.php == '7.3'
       - uses: 8398a7/action-slack@v1
         with:
           type: failure
