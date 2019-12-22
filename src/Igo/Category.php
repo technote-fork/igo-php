@@ -2,6 +2,10 @@
 
 namespace Igo;
 
+/**
+ * Class Category
+ * @package Igo
+ */
 class Category
 {
     public $id;
@@ -9,11 +13,19 @@ class Category
     public $invoke;
     public $group;
 
-    public function __construct($i, $l, $iv, $g)
+    /**
+     * Category constructor.
+     *
+     * @param $id
+     * @param $length
+     * @param $invoke
+     * @param $group
+     */
+    public function __construct($id, $length, $invoke, $group)
     {
-        $this->id = $i;
-        $this->length = $l;
-        $this->invoke = $iv;
-        $this->group = $g;
+        $this->id     = $id;
+        $this->length = $length;
+        $this->invoke = $invoke;
+        $this->group  = $group;
     }
 }

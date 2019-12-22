@@ -1,55 +1,78 @@
 {
-  "name": "logue/igo-php",
-  "description": "Morphological analysis engine 'Igo' porting and changed for PHP 5.3 and composer.",
-  "version": "0.2.0",
+  "name": "technote-fork/igo-php",
   "type": "library",
+  "license": "MIT",
+  "description": "Morphological analysis engine 'Igo' porting and changed for PHP 5.6 and composer.",
+  "homepage": "https://github.com/technote-fork/igo-php",
   "keywords": [
     "php",
     "igo",
     "morphological analysis",
     "chasen"
   ],
-  "homepage": "https://github.com/logue/igo-php",
-  "license": "MIT",
   "authors": [
     {
       "name": "Logue",
       "email": "logue@hotmail.co.jp",
       "homepage": "http://logue.be/"
+    },
+    {
+      "name": "Technote",
+      "email": "technote.space@gmail.com",
+      "homepage": "https://technote.space"
     }
   ],
-  "support": {
-    "issues": "https://github.com/logue/igo-php/issues",
-    "wiki": "https://github.com/logue/igo-php/wiki",
-    "source": "https://github.com/logue/igo-php"
-  },
   "require": {
-    "php": ">=5.4.0",
-    "symfony/polyfill-mbstring": "^1.13"
+    "php": ">=5.6.0",
+    "ext-mbstring": "*"
   },
   "require-dev": {
-    "phpunit/phpunit": "^8.4",
-    "squizlabs/php_codesniffer": "3.*",
-    "symfony/var-dumper": "^4.3",
-    "phpcompatibility/php-compatibility": "*"
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+    "phpmd/phpmd": "^2.7",
+    "phpunit/phpunit": "^5.7",
+    "squizlabs/php_codesniffer": "^3.5"
   },
-  "prefer-stable": true,
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/logue/igo-php"
-    }
-  ],
   "autoload": {
     "psr-4": {
       "Igo\\": "src/Igo/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "Igo\\Tests\\": "tests/"
+    }
+  },
   "scripts": {
-    "post-install-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility",
-    "post-update-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility",
-    "test": "phpunit test/IgoTest",
-    "check": "phpcs ./",
-    "fix": "vendor ./"
+    "setup": [
+      "composer install --no-interaction --prefer-dist --no-suggest",
+      "rm -rdf jdic",
+      "git clone --branch=test https://github.com/technote-fork/igo-php.git jdic"
+    ],
+    "lint": [
+      "@phpcs",
+      "@phpmd"
+    ],
+    "test": [
+      "@phpunit"
+    ],
+    "phpcs": "phpcs --standard=./phpcs.xml",
+    "phpcs:fix": "phpcbf --standard=./phpcs.xml",
+    "phpmd": "phpmd ./src/,./tests/ text phpmd.xml",
+    "phpunit": "phpunit --stop-on-failure --colors=always",
+    "phpunit:no": "@phpunit --no-coverage",
+    "packages": [
+      "rm -rdf vendor",
+      "rm -f composer.lock",
+      "composer require --dev dealerdirect/phpcodesniffer-composer-installer phpmd/phpmd phpunit/phpunit squizlabs/php_codesniffer"
+    ],
+    "install:phpunit": [
+      "@packages",
+      "git clone --branch=test https://github.com/technote-fork/igo-php.git jdic"
+    ]
+  },
+  "config": {
+    "platform": {
+      "php": "5.6"
+    }
   }
 }

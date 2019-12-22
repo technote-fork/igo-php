@@ -3,7 +3,9 @@
 namespace Igo;
 
 /**
- * Viterbiアルゴリズムで使用されるノード.
+ * Viterbiアルゴリズムで使用されるノード
+ * Class ViterbiNode
+ * @package Igo
  */
 class ViterbiNode
 {
@@ -16,19 +18,34 @@ class ViterbiNode
     public $length; // 形態素の表層形の長さ(文字数)
     public $isSpace; // 形態素の文字種(文字カテゴリ)が空白文字かどうか
 
-    public function __construct($wid, $beg, $len, $wordCost, $l, $r, $space)
+    /**
+     * ViterbiNode constructor.
+     *
+     * @param $wid
+     * @param $beg
+     * @param $len
+     * @param $wordCost
+     * @param $leftId
+     * @param $rightId
+     * @param $space
+     */
+    public function __construct($wid, $beg, $len, $wordCost, $leftId, $rightId, $space)
     {
-        $this->wordId = $wid;
-        $this->leftId = $l;
-        $this->rightId = $r;
-        $this->length = $len;
-        $this->cost = $wordCost;
+        $this->wordId  = $wid;
+        $this->leftId  = $leftId;
+        $this->rightId = $rightId;
+        $this->length  = $len;
+        $this->cost    = $wordCost;
         $this->isSpace = $space;
-        $this->start = $beg;
+        $this->start   = $beg;
+        $this->prev    = null;
     }
 
+    /**
+     * @return ViterbiNode
+     */
     public static function makeBOSEOS()
     {
-        return new self(0, 0, 0, 0, 0, 0, false);
+        return new ViterbiNode(0, 0, 0, 0, 0, 0, false);
     }
 }

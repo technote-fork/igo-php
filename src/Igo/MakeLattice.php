@@ -2,37 +2,58 @@
 
 namespace Igo;
 
+/**
+ * Class MakeLattice
+ * @package Igo
+ */
 class MakeLattice
 {
+    /** @var Tagger $tagger */
     private $tagger;
     private $nodesAry;
-    private $i;
+    private $idx;
     private $prevs;
     private $empty = true;
 
+    /**
+     * MakeLattice constructor.
+     *
+     * @param $tagger
+     * @param $nodesAry
+     */
     public function __construct($tagger, &$nodesAry)
     {
-        $this->tagger = $tagger;
+        $this->tagger   = $tagger;
         $this->nodesAry = &$nodesAry;
     }
 
-    public function set($i)
+    /**
+     * @param $idx
+     */
+    public function set($idx)
     {
-        $this->i = $i;
-        $this->prevs = $this->nodesAry[$i];
+        $this->idx   = $idx;
+        $this->prevs = $this->nodesAry[$idx];
         $this->empty = true;
     }
 
+    /**
+     * @param $vn
+     */
     public function call($vn)
     {
         $this->empty = false;
+
         if ($vn->isSpace) {
-            $this->nodesAry[$this->i + $vn->length] = $this->prevs;
+            $this->nodesAry[$this->idx + $vn->length] = $this->prevs;
         } else {
-            $this->nodesAry[$this->i + $vn->length][] = $this->tagger->setMincostNode($vn, $this->prevs);
+            $this->nodesAry[$this->idx + $vn->length][] = $this->tagger->setMincostNode($vn, $this->prevs);
         }
     }
 
+    /**
+     * @return bool
+     */
     public function isEmpty()
     {
         return $this->empty;

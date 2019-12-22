@@ -1,5 +1,14 @@
 # Igo-php - PHP による形態素解析プログラム
 
+[![CI Status](https://github.com/technote-fork/igo-php/workflows/CI/badge.svg)](https://github.com/technote-fork/igo-php/actions)
+[![codecov](https://codecov.io/gh/technote-fork/igo-php/branch/master/graph/badge.svg)](https://codecov.io/gh/technote-fork/igo-php)
+[![CodeFactor](https://www.codefactor.io/repository/github/technote-fork/igo-php/badge)](https://www.codefactor.io/repository/github/technote-fork/igo-php)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/technote-fork/igo-php/blob/master/LICENSE)
+[![PHP: >=5.6](https://img.shields.io/badge/PHP-%3E%3D5.6-orange.svg)](http://php.net/)
+
+<!-- START doctoc -->
+<!-- END doctoc -->
+
 ## 1, 概要
 
 これは「Igo - Java 形態素解析器」の PHP による実装です。Igo は、MeCab 由来の辞書フォーマットを用い、ほぼ MeCab と同様の結果を提供する形態素解析プログラムで。この Igo-php は、Igo と同様の形態素解析と分かち書きの機能を提供します。
@@ -9,7 +18,7 @@
 composer で以下のコマンドを実行します。
 
 ```shell
-$ composer logue/igo-php
+$ composer technote-fork/igo-php
 ```
 
 ## 3. 辞書の作成方法
@@ -56,7 +65,7 @@ print_r($result);
 <?php
 require 'vendor/autoload.php';
 
-$igo = new Igo\Tagger();
+$igo = new Igo\Tagger(['dict_dir' => '/home/user/jdic']);
 $result = $igo->parse('すもももももももものうち');
 print_r($result);
 ```
@@ -64,9 +73,12 @@ print_r($result);
 単体で使用する場合と同様に、指定した文字列から適切なエンコードが判定出来ないような場合は、Igo クラスのコンストラクト時の output_encoding の値を変更し、出力エンコードを明示的に指定することで回避できます。
 
 ```php
+<?php
+require 'vendor/autoload.php';
+
 $igo = new Igo\Tagger([
-    'dict_dir'=>"/home/user/jdic",
-    'output_encoding'=>'Shift_JIS'
+    'dict_dir'        => '/home/user/jdic',
+    'output_encoding' => 'Shift_JIS'
 ]);
 ```
 
@@ -79,16 +91,20 @@ $igo = new Igo\Tagger([
 REDUCE モードを OFF にするには、以下のようにコンストラクト時に、reduce_mode を追記します。
 
 ```php
+<?php
+require 'vendor/autoload.php';
+
 $igo = new Igo\Tagger([
-    'dict_dir'=>'/home/user/jdic',
-    'reduce_mode'=>false
+    'dict_dir'    => '/home/user/jdic',
+    'reduce_mode' => false
 ]);
 ```
 
 なお、REDUCE モードを FALSE で使用する場合、memory_limit パラメータを適切に設定するなどの考慮が必要です。
 
 ```php
-ini_set("memory_limit", "1073741824"); //1024^3
+<?php
+ini_set('memory_limit', '1073741824'); //1024^3
 ```
 
 ## 6. バイトオーダーについて
@@ -98,9 +114,12 @@ Igo-php は、デフォルトでリトルエンディアン用の設定になっ
 Intel 系のプラットフォームであれば、このままでよいはずです。ビッグエンディアンのプラットフォームで利用する場合は、コンストラクト時に little_endian の値を変更してみてください。
 
 ```php
+<?php
+require 'vendor/autoload.php';
+
 $igo = new Igo\Tagger(array(
-    'dict_dir'=>"/home/user/jdic",
-    'little_endian'=>true //true->Little endian, false->Big endian
+    'dict_dir'      => '/home/user/jdic',
+    'little_endian' => true //true->Little endian, false->Big endian
 ));
 ```
 
@@ -112,7 +131,7 @@ MIT ライセンスで配布いたします。
 ## 8. 連絡先
 
 - igo-php-devel@lists.osdn.jp
-- logue@hotmail.co.jp
+- technote.space@gmail.com
 
 ## 9. 参考リンク
 
