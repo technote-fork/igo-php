@@ -58,25 +58,14 @@
     "phpunit": "phpunit --stop-on-failure --colors=always",
     "phpunit:no": "@phpunit --no-coverage",
     "packages": [
-      "@config:remove",
       "rm -rdf vendor",
       "rm -f composer.lock",
-      "composer require --dev codedungeon/phpunit-result-printer dealerdirect/phpcodesniffer-composer-installer phpmd/phpmd phpunit/phpunit squizlabs/php_codesniffer",
-      "@config:set"
+      "composer require --dev codedungeon/phpunit-result-printer dealerdirect/phpcodesniffer-composer-installer phpmd/phpmd phpunit/phpunit squizlabs/php_codesniffer"
     ],
     "install:phpunit": [
-      "@config:remove",
       "rm -rdf vendor",
       "rm -f composer.lock",
       "composer require --dev phpunit/phpunit"
-    ],
-    "config:set": [
-      "cat composer.json | jq '.+ {\"config\":{\"platform\":{\"php\":\"5.6\"}}}' > composer.tmp.json",
-      "mv composer.tmp.json composer.json"
-    ],
-    "config:remove": [
-      "cat composer.json | jq 'del(.config)' > composer.tmp.json",
-      "mv composer.tmp.json composer.json"
     ]
   },
   "config": {
