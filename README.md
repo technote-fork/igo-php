@@ -18,7 +18,7 @@
 composer で以下のコマンドを実行します。
 
 ```shell
-$ composer technote-space/igo-php
+$ composer require technote-space/igo-php
 ```
 
 ## 3. 辞書の作成方法
@@ -54,7 +54,7 @@ $ java -cp igo-0.4.5.jar net.reduls.igo.bin.BuildDic ipadic mecab-ipadic-2.7.0-2
 <?php
 require 'vendor/autoload.php';
 
-$igo = new Igo\Tagger();
+$igo = new Igo\Tagger(['dict_dir' => '/home/user/jdic']);
 $result = $igo->wakati('すもももももももものうち');
 print_r($result);
 ```
