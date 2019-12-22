@@ -18,7 +18,7 @@
 composer で以下のコマンドを実行します。
 
 ```shell
-$ composer require technote-space/igo-php
+$ composer require technote/igo-php
 ```
 
 ## 3. 辞書の作成方法
