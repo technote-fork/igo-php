@@ -1,7 +1,7 @@
 # Contributing
-[issues]: https://github.com/technote-fork/igo-php/issues
-[fork]: https://github.com/technote-fork/igo-php/fork
-[pr]: https://github.com/technote-fork/igo-php/compare
+[issues]: https://github.com/technote-space/igo-php/issues
+[fork]: https://github.com/technote-space/igo-php/fork
+[pr]: https://github.com/technote-space/igo-php/compare
 [phpcs]: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Usage
 [phpmd]: https://phpmd.org/documentation/index.html
 [phpunit]: https://phpunit.de/
