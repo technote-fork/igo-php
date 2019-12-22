@@ -6,8 +6,23 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/technote-fork/igo-php/blob/master/LICENSE)
 [![PHP: >=5.6](https://img.shields.io/badge/PHP-%3E%3D5.6-orange.svg)](http://php.net/)
 
-<!-- START doctoc -->
-<!-- END doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [1, 概要](#1-%E6%A6%82%E8%A6%81)
+- [2, インストール方法](#2-%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E6%96%B9%E6%B3%95)
+- [3. 辞書の作成方法](#3-%E8%BE%9E%E6%9B%B8%E3%81%AE%E4%BD%9C%E6%88%90%E6%96%B9%E6%B3%95)
+- [4. 使用方法](#4-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
+  - [a. 分かち書き](#a-%E5%88%86%E3%81%8B%E3%81%A1%E6%9B%B8%E3%81%8D)
+  - [b. 形態素解析](#b-%E5%BD%A2%E6%85%8B%E7%B4%A0%E8%A7%A3%E6%9E%90)
+  - [5. REDUCE モード](#5-reduce-%E3%83%A2%E3%83%BC%E3%83%89)
+- [6. バイトオーダーについて](#6-%E3%83%90%E3%82%A4%E3%83%88%E3%82%AA%E3%83%BC%E3%83%80%E3%83%BC%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
+- [7. ライセンス](#7-%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9)
+- [8. 連絡先](#8-%E9%80%A3%E7%B5%A1%E5%85%88)
+- [9. 参考リンク](#9-%E5%8F%82%E8%80%83%E3%83%AA%E3%83%B3%E3%82%AF)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## 1, 概要
 
