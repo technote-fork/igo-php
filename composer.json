@@ -67,9 +67,7 @@
       "composer require --dev codedungeon/phpunit-result-printer dealerdirect/phpcodesniffer-composer-installer phpmd/phpmd phpunit/phpunit squizlabs/php_codesniffer"
     ],
     "install:phpunit": [
-      "rm -rdf vendor",
-      "rm -f composer.lock",
-      "composer require --dev phpunit/phpunit",
+      "@packages",
       "git clone --branch=test https://github.com/technote-fork/igo-php.git jdic"
     ]
   },
