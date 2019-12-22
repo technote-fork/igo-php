@@ -45,6 +45,9 @@
   "scripts": {
     "setup": [
       "composer install --no-interaction --prefer-dist --no-suggest",
+      "@setup:jdic"
+    ],
+    "setup:jdic": [
       "rm -rdf jdic",
       "git clone --branch=test https://github.com/technote-space/igo-php.git jdic"
     ],
@@ -67,7 +70,7 @@
     ],
     "install:phpunit": [
       "@packages",
-      "git clone --branch=test https://github.com/technote-space/igo-php.git jdic"
+      "@setup:jdic"
     ]
   },
   "config": {
