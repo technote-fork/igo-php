@@ -27,7 +27,6 @@
     "ext-mbstring": "*"
   },
   "require-dev": {
-    "codedungeon/phpunit-result-printer": "^0.5.4",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
     "phpmd/phpmd": "^2.7",
     "phpunit/phpunit": "^5.7",
@@ -64,7 +63,7 @@
     "packages": [
       "rm -rdf vendor",
       "rm -f composer.lock",
-      "composer require --dev codedungeon/phpunit-result-printer dealerdirect/phpcodesniffer-composer-installer phpmd/phpmd phpunit/phpunit squizlabs/php_codesniffer"
+      "composer require --dev dealerdirect/phpcodesniffer-composer-installer phpmd/phpmd phpunit/phpunit squizlabs/php_codesniffer"
     ],
     "install:phpunit": [
       "@packages",
