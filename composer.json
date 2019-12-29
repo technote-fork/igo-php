@@ -60,7 +60,7 @@
     ],
     "phpcs": "phpcs --standard=./phpcs.xml",
     "phpcs:fix": "phpcbf --standard=./phpcs.xml",
-    "phpmd": "phpmd ./src/,./tests/ text phpmd.xml",
+    "phpmd": "phpmd ./src/,./tests/ ansi phpmd.xml",
     "phpunit": "phpunit --stop-on-failure --colors=always",
     "phpunit:no": "@phpunit --no-coverage",
     "packages": [

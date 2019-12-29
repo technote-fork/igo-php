@@ -52,8 +52,8 @@ class Tagger
             throw new Exception('Dictionary directory has not defined or not readable.');
         }
 
-        self::$reduce      = $this->options['reduce_mode'];
-        self::$dicEnc      = ($this->options['little_endian']) ? 'UTF-16LE' : 'UTF-16BE';
+        self::$reduce = $this->options['reduce_mode'];
+        self::$dicEnc = ($this->options['little_endian']) ? 'UTF-16LE' : 'UTF-16BE';
 
         $this->wdc = new WordDic($this->options['dict_dir']);
         $this->unk = new Unknown($this->options['dict_dir']);
@@ -120,7 +120,7 @@ class Tagger
      */
     private function parseImpl($text)
     {
-        $len        = count($text);
+        $len      = count($text);
         $nodesAry = [[ViterbiNode::makeBOSEOS()]];
         for ($idx = 1; $idx <= $len; $idx++) {
             $nodesAry[$idx] = [];
@@ -128,7 +128,7 @@ class Tagger
 
         $fn = new MakeLattice($this, $nodesAry);
         for ($idx = 0; $idx < $len; $idx++) {
-            if (count($nodesAry[$idx]) !== 0) {
+            if (! empty($nodesAry[$idx])) {
                 $fn->set($idx);
                 $this->wdc->search($text, $idx, $fn); // 単語辞書から形態素を検索
                 $this->unk->search($text, $idx, $this->wdc, $fn); // 未知語辞書から形態素を検索
