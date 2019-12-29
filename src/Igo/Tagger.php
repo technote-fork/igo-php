@@ -10,7 +10,6 @@ use Exception;
  */
 class Tagger
 {
-    private static $bosNodes = [];
     public static $reduce = false;
     public static $dicEnc;
     private $wdc;
@@ -54,7 +53,6 @@ class Tagger
         }
 
         self::$reduce      = $this->options['reduce_mode'];
-        self::$bosNodes[0] = ViterbiNode::makeBOSEOS();
         self::$dicEnc      = ($this->options['little_endian']) ? 'UTF-16LE' : 'UTF-16BE';
 
         $this->wdc = new WordDic($this->options['dict_dir']);
@@ -123,7 +121,7 @@ class Tagger
     private function parseImpl($text)
     {
         $len        = count($text);
-        $nodesAry[] = self::$bosNodes;
+        $nodesAry = [[ViterbiNode::makeBOSEOS()]];
         for ($idx = 1; $idx <= $len; $idx++) {
             $nodesAry[$idx] = [];
         }
