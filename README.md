@@ -6,9 +6,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/technote-space/igo-php/blob/master/LICENSE)
 [![PHP: >=5.6](https://img.shields.io/badge/PHP-%3E%3D5.6-orange.svg)](http://php.net/)
 
+## Table of Contents
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**
+<details>
+<summary>Details</summary>
 
 - [1, 概要](#1-%E6%A6%82%E8%A6%81)
 - [2, インストール方法](#2-%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E6%96%B9%E6%B3%95)
@@ -22,6 +24,7 @@
 - [8. 連絡先](#8-%E9%80%A3%E7%B5%A1%E5%85%88)
 - [9. 参考リンク](#9-%E5%8F%82%E8%80%83%E3%83%AA%E3%83%B3%E3%82%AF)
 
+</details>
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## 1, 概要
