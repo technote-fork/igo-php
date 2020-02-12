@@ -56,7 +56,7 @@
             "mkdir -p ./fixtures/.git",
             "chmod -R +w ./fixtures/.git && rm -rdf ./fixtures",
             "git clone --depth=1 https://github.com/wp-content-framework/fixtures.git fixtures",
-            "composer install"
+            "composer install --no-interaction --prefer-dist --no-suggest"
         ],
         "test": "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/test.sh",
         "phpcs": "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcs.sh",
@@ -64,7 +64,10 @@
         "phpcbf": "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcbf.sh",
         "phpunit": "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} COVERAGE=1 bash ./fixtures/bin/php/phpunit.sh",
         "phpunit:no": "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpunit.sh",
-        "packages": "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/packages.sh"
+        "packages": [
+            "@prepare",
+            "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/packages.sh"
+        ]
     },
     "config": {
         "platform": {
