@@ -20,6 +20,9 @@ jobs:
     env:
       LINT: 1
     steps:
+      - uses: technote-space/auto-cancel-redundant-job@v1
+        with:
+          EXCLUDE_MERGED: 'true'
       - name: Set running flag
         run: echo "::set-env name=RUNNING::1"
       - uses: actions/checkout@v2
@@ -131,9 +134,10 @@ jobs:
           fi
 
       - name: Switch PHP version
-        env:
-          PHP_VERSION: ${{ matrix.php }}
-        run: sudo ln -sf "/usr/bin/php$PHP_VERSION" /etc/alternatives/php
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: xdebug
         if: env.RUNNING
       - name: Get Composer Cache Directory
         id: composer-cache
