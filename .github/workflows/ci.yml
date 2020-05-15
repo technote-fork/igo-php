@@ -9,7 +9,6 @@ on:
 name: CI
 
 env:
-  CI: 1
   COVERAGE: 1
   WORKSPACE: ${{ github.workspace }}
 
@@ -100,7 +99,7 @@ jobs:
     name: PHPUnit
     needs: [phpcs, phpmd]
     runs-on: ubuntu-16.04
-    timeout-minutes: 5
+    timeout-minutes: 10
     strategy:
       matrix:
         php: ['7.0', '7.3', '5.6']
